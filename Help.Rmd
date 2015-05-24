@@ -1,0 +1,29 @@
+---
+title: "Help"
+author: "Allan Cuenca"
+date: "Saturday, May 23, 2015"
+output: html_document
+---
+
+###How to use this Shiny App  
+
+This app requires 4 inputs  
++ Cylinders  
++ Engine Displacement  
++ Horsepower  
++ Weight  
+  
+It uses a Random Forest model to create a regression prediction of resulting Acceleration performance (# of seconds it takes a car to reach 60 mph), from the specifications provided.  
+  
+These specifications are entered via the widgets to the left of the page.  
+
+
+***Disclaimer***  
+
+The data used to create the predictive model is for cars from the [Auto](http://www.inside-r.org/packages/cran/ISLR/docs/Auto) dataset in the [ISLR](http://cran.r-project.org/web/packages/ISLR/ISLR.pdf) package. The data set contains car models from 1970-1982. As such, the results of the prediction cannot applied to cars manufactured today, more than 25 years hence. Technology advancements not captured in the data set will skew actual numbers much lower than those predicted.
+
+```{r warning=FALSE, message=FALSE}
+library(ISLR)
+data(Auto)
+summary(Auto)
+```
